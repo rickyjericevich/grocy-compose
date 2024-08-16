@@ -1,0 +1,16 @@
+# NOTE: use $$ to escape $ in docker compose yaml
+
+# The config below was obtained from: https://github.com/linuxserver/docker-grocy?tab=readme-ov-file#docker-compose-recommended-click-here-for-more-info
+
+services:
+
+  grocy:
+    image: lscr.io/linuxserver/grocy:latest
+    # ports: # No need to expose ports when using a reverse proxy like NPM as a sibling compose service
+    #   - 9283:80 # web dashboard
+    volumes:
+      - grocy_data:/config
+    restart: unless-stopped
+
+volumes:
+  grocy_data:
