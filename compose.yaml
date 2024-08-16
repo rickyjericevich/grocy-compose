@@ -10,7 +10,6 @@ services:
     #   - 9283:80 # web dashboard
     volumes:
       - grocy_data:/config
-    restart: unless-stopped
 
 volumes:
   grocy_data:
